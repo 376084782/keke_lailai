@@ -1,0 +1,120 @@
+.userCard{
+  position: relative;
+  .goback{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 24px;
+    height: 24px;
+    z-index: 99;
+    background-color: #000;
+    border-radius: 12px;
+    color: #fff;
+    line-height: 24px;
+  }
+  .van-swipe{
+    height: 375px;
+    margin-bottom: 20px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .infoBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 0 20px 10px;
+    border-bottom: 1px solid #F0F0F0;
+    h4{
+      font-size: 24px;
+    }
+    p{
+      font-size: 14px;
+      color: #646464;
+      span{
+        font-size: 12px;
+        margin-right: 10px;        
+      }
+      .certify{
+        background-image: linear-gradient(to right, #F6A23D, #FFEB80);
+        border-radius: 10px;
+        color: #fff;
+        padding: 0 10px;
+        margin-left: 5px;
+      }
+    }
+    .van-button{
+      width: 70px;
+      height: 26px;
+      line-height: 26px;
+      font-size: 14px;
+    }
+  }
+  .sign{
+    font-size: 13px;
+    color: #646464;
+    text-align: left;
+    padding: 10px 20px;
+  }
+  .opBox{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: 0px -2px 9px 3px #EDEDED;
+    font-size: 16px;
+    .gift{
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background-image: linear-gradient(#F8E199, #FC829D, #F73089);
+      color: #fff;
+      line-height: 20px;
+      font-size: 13px;
+      margin-right: 5px;
+    }
+    .chat{
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background-image: linear-gradient(#89FD64, #11998E);
+      color: #fff;
+      line-height: 20px;
+      font-size: 13px;
+      margin-right: 5px;
+    }
+  }
+  .save{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    line-height: 28px;
+    height: 26px;
+    z-index: 99;
+    width: 52px;
+    font-size: 14px;
+    border: none;
+  }
+  .change{
+    position: absolute;
+    top: 340px;
+    right: 20px;
+    z-index: 99;
+    .van-button{
+      line-height: 26px;
+      height: 26px;
+      width: 80px;
+      font-size: 14px;
+      background-color: rgba(10, 200, 150, 0.8);
+      border-color: #fff;
+    }
+  }
+  .van-cell{
+    line-height: 30px;
+    font-size: 16px;
+  }
+}

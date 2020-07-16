@@ -1,0 +1,293 @@
+#rank {
+
+  background-color: #f1f2f5;
+
+  .rank-top {
+    background-color: #1C1C26;
+  }
+
+  .rank-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 18px 18px;
+
+    .rank-back {
+      color: #fff;
+      width: 10px;
+      height: 18px;
+      font-size: 18px;
+      display: flex;
+    }
+
+    p {
+      font-size: 16px;
+
+      span {
+        color: #fff;
+        margin: 0 10px;
+      }
+
+      span.active {
+        position: relative;
+        font-size: 20px;
+        font-weight: bold;
+
+        &::after {
+          position: absolute;
+          content: '';
+          width: 16px;
+          height: 4px;
+          background-color: #fff;
+          border-radius: 10px;
+          bottom: -6px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .rank-question {
+      width: 20px;
+      height: 20px;
+      background: url(~@/assets/icon/question.png) no-repeat;
+      background-size: 100%;
+      background-color: #cacaca;
+      border-radius: 30px;
+      box-shadow: 0px 0px 0px 1px #1C1C26;
+    }
+  }
+
+  .rank-tabs {
+    background-color: #33333C;
+    width: 335px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 20px;
+    margin: 0 auto 20px;
+    padding: 3px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      color: #fff;
+      font-size: 16px;
+      width: 76px;
+      line-height: 30px;
+      text-align: center;
+
+      &.active {
+        background-color: #F0F0F0;
+        color: #323232;
+        border-radius: 15px;
+      }
+    }
+  }
+
+  .rank-yestoday {
+    line-height: 60px;
+    border-top: 1px solid #282831;
+    border-bottom: 1px solid #282831;
+    color: #606067;
+    font-size: 16px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+
+    .wrap-avatar {
+      float: right;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      margin: 10px 0 10px 10px;
+    }
+  }
+
+  .rank-win {
+    position: relative;
+    width: 355px;
+    height: 220px;
+    margin: 0 auto;
+    background: url(~@/assets/icon/rankBox.png) no-repeat;
+    background-size: 355px 95px;
+    background-position: center 114px;
+    display: flex;
+    justify-content: flex-start;
+
+    p {
+      font-size: 10px;
+      color: #fff;
+      text-align: center;
+      margin: 0 0 1px;
+    }
+
+    h4 {
+      font-size: 13px;
+      color: #fff;
+      text-align: center;
+      margin: 0 0 1px;
+      max-width: 118px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      i {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: url(~@/assets/icon/winner.png) no-repeat;
+        background-size: 100%;
+      }
+    }
+
+    .avatar {
+      position: relative;
+      text-align: center;
+      margin-bottom: 18px;
+      padding-top: 60px;
+
+
+      .wrap-avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 40px;
+        margin: 0 auto;
+      }
+
+      p {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 5px;
+        z-index: 5;
+        width: 48px;
+        line-height: 16px;
+        font-size: 10px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 0;
+      }
+    }
+
+    .rank_0 {
+      order: 2;
+      flex: 0 0 118.3px;
+
+      .avatar {
+        padding-top: 40px;
+
+        .wrap-avatar {
+          width: 64px;
+          height: 64px;
+        }
+
+        p {
+          background-image: linear-gradient(to right, #EA9314, #BD6617);
+          border: 1px solid #FFD974;
+          color: #FFE87B;
+        }
+      }
+    }
+
+    .rank_1 {
+      order: 1;
+      flex: 0 0 118.3px;
+
+      .avatar {
+        p {
+          background-image: linear-gradient(to right, #E4ECFF, #9EB2CD);
+          border: 1px solid #D7EBFE;
+          color: #536FA2;
+        }
+      }
+    }
+
+    .rank_2 {
+      order: 3;
+      flex: 0 0 118.3px;
+
+      .avatar {
+        p {
+          background-image: linear-gradient(to right, #FFF2ED, #A8805D);
+          border: 1px solid #B39C95;
+          color: #7F5E48;
+        }
+      }
+    }
+  }
+
+  .rank-list {
+    padding-bottom: 65px;
+
+    .rank-listItem {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 10px 15px;
+    }
+
+    span {
+      color: #969696;
+      font-size: 20px;
+      margin: 0 15px 0 8px;
+    }
+
+    .wrap-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 30px;
+      margin-right: 10px;
+    }
+
+    h4 {
+      font-weight: normal;
+      font-size: 16px;
+      margin: 5px 0;
+
+      i {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: url(~@/assets/icon/winner.png) no-repeat;
+        background-size: 100%;
+      }
+    }
+
+    p {
+      margin: 0;
+      color: #969696;
+      font-size: 14px;
+      text-align: left;
+
+      &.org {
+        font-size: 15px;
+      }
+    }
+
+    .right {
+      margin-left: auto;
+      text-align: center;
+    }
+  }
+
+  .rank-self {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+
+  p {
+    &.org {
+      color: #F5A623;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    &.tip {
+      color: #969696;
+      font-size: 10px;
+    }
+  }
+}

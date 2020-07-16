@@ -1,0 +1,153 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 20vw;
+}
+*{
+  margin: 0;
+  padding: 0;
+  color: #323232;
+}
+html {
+  font-size: 4.267vw/2;
+}
+
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  margin: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.page {
+  width: 100%;
+  min-height: 100%;
+}
+
+.pull-left{
+  float: left;
+}
+
+.pull-right{
+  float: right;
+}
+
+// vant 样式覆盖
+.van-toast,
+.van-toast__icon,
+.van-toast__text,
+.van-toast--html .van-toast__text, 
+.van-toast--text .van-toast__text{
+  color: #fff;
+}
+.van-button{
+  font-size: 16px;
+  line-height: 40px;
+  width: 100%;
+  height: 40px;
+  transition: all ease .3s;
+  &.color1{
+    background-color: #0091FF!important;
+  }
+  &.van-button--small{
+    font-size: 14px;
+    line-height: 34px;
+    width: 100%;
+    height: 34px;
+  }
+  &.van-button--default{
+    background-color: #1C1C26;
+    span,.van-button__icon{
+      color: #fff!important;
+    }
+  }
+  &.van-button--plain.van-button--default{
+    background-color: #F8F8FB;
+    span{
+      color: #B9B9B9!important;
+    }
+  }
+  &.van-button--primary{
+    background-color: #0AC896;
+    span{
+      color: #fff!important;
+    }
+  }
+  &.van-button--plain.van-button--primary{
+    background-color: #E3FFF9;
+    span{
+      color: #0AC896!important;
+    }
+  }
+}
+.van-dialog{
+  width:270px;
+  .van-button{
+		margin-bottom: 20px;
+	}
+  .van-dialog__header{
+    border-bottom: 1px solid #F0F0F0;
+    font-size: 20px;
+    padding: 15px 0;
+    font-weight: bold;
+  }
+  .van-dialog__content{
+    padding: 20px 20px 0;
+  }
+}
+.van-cell.inputSingle{
+  background-color: #F8F8FB;
+  line-height: 34px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  padding: 0 0 0 14px;
+  margin-bottom: 20px;
+  &::after{
+    display: none;
+  }
+  .van-field__button{
+    .van-button{
+      margin: 0;
+      border-radius: 40px;
+      font-size: 11px;
+    }
+  }
+}
+.van-dialog .van-dialog__footer .van-button,
+.van-dialog .van-dialog__footer--buttons .van-button{
+  margin-bottom: 0;
+  font-size: 16px;
+  background-color: transparent;
+  span{
+    color: #0AC896 !important;
+  }
+}
+.icon-post{
+  margin: 0 -3px;
+}
+.van-popup-topTitle{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 16px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #F0F0F0;
+  margin-bottom: 10px;
+  span{
+    font-size: 14px;
+    color: #969696;
+    margin-left: auto;
+  }
+}
+
+
+
+

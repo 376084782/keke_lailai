@@ -49,12 +49,12 @@ export default {
           icon: "wechat",
           name: "微信支付",
           type: 1
-        },
-        {
-          icon: "alipay",
-          name: "支付宝支付",
-          type: 2
         }
+        // {
+        //   icon: "alipay",
+        //   name: "支付宝支付",
+        //   type: 2
+        // }
       ]
     };
   },
@@ -78,7 +78,7 @@ export default {
           pay_type: this.selectWay == 1 ? 7 : 6
         }
       }).then(e => {
-        location.href = e.data.url;
+        location.href = e.data.h5wxpay;
       });
     },
     getData() {

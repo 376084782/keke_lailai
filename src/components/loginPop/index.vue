@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     goDownload() {
-      location.href = "https://ztaudio-res.qianyancm.com/share/index.html";
+      location.href = "http://kk-res.kekestar.cn/channel_down/800000/index.html";
     },
     onRecharge() {
       console.log(

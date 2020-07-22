@@ -1,5 +1,6 @@
 #room {
   background-image: linear-gradient(#040B25, #06906B);
+  // background-image: linear-gradient(#1D0F6E, #005B46);
   height: 100%;
   padding: 10px;
   overflow: hidden;
@@ -327,6 +328,7 @@
       div {
         width: 64px;
         height: 64px;
+        margin: 0 auto !important;
       }
     }
   }

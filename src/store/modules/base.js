@@ -12,15 +12,15 @@ const state = {
   bRongInited: false,
 
   bShowUserCard: false,
-  userCardInfo: null,
+  userCardInfo: {},
   bShowRoom: false,
 
   putUrl: '',
-
+  urlDownload:'http://kk-res.kekestar.cn/channel_down/800000/index.html',
   dev: false,
   showCharge: false,
   env: 3,
-  // 1声撩测试2声撩正式3来来测试
+  // 1声撩测试2声撩正式3来来测试4来来正式
   envConfig: {
     1: {
       secret: '879f6c6e1afb557bb7d77220a511099b',
@@ -40,11 +40,20 @@ const state = {
       tokenRongIm: 'k51hidwqk4n7b',
       // baseUrl: 'http://39.105.149.236:5084',
       baseUrl: 'https://test-ll-api.kekestar.cn:50443',
+    },
+    // 来来正式
+    4: {
+      secret: 'fe154278d336d08e672745797644c364',
+      tokenAgora: 'b14a0dfe76dc44fc9d170b700659d8cd',
+      tokenRongIm: 'tdrvipkstyqj5',
+      // baseUrl: 'http://39.105.149.236:5084',
+      baseUrl: 'https://ll-api.kekestar.cn',
     }
   }
 };
 
 const getters = {
+  urlDownload: state => state.urlDownload,
   showCharge: state => state.showCharge,
   secret: state => {
     return state.envConfig[state.env].secret
@@ -182,6 +191,19 @@ const actions = {
         state.userinfo = msg.data
       }
     });
+  },
+  'set-other-card-info'({
+    state,
+    commit,
+    dispatch,
+    rootState
+  }, data) {
+    // 跳转用户资料卡
+    if (data) {
+      state.userCardInfo = data;
+    } else {
+      state.userCardInfo = {};
+    }
   },
   'show-user-card'({
     state,

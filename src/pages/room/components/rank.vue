@@ -141,7 +141,7 @@ export default {
       });
     },
     toUserCard(i) {
-      this.$store.dispatch("show-user-card", i);
+      this.$emit("showUserCard", i);
     }
   },
   created() {

@@ -92,7 +92,7 @@
       </p>
     </div>
     <!-- 公告 -->
-    <bulletin-modal v-model="bShowBulletin" :content="roomInfo.desc"></bulletin-modal>
+    <bulletin-modal v-model="bShowBulletin" :content="roomInfo.notice"></bulletin-modal>
     <!-- 个人资料卡 -->
     <card-modal v-model="bShowCard" :user-id="curUserId" @send="onSend" :show-off-micro="isOnMicro"></card-modal>
     <!-- 在线用户 -->
@@ -115,11 +115,13 @@
     <van-action-sheet v-model="showActionBtm" :actions="actionsBtm" @select="onSelectBtm" />
     <!-- 充值提示框 -->
     <l-recharge-modal v-model="bShowRechargeModal"></l-recharge-modal>
-    <view-rank @close="showRank=false" v-if="showRank"></view-rank>
+    <view-rank @showUserCard="showUserCardHandler" @close="showRank=false" v-if="showRank"></view-rank>
+    <user-card :is-comp="true" v-show="showUserCard" v-model="showUserCard"></user-card>
   </div>
 </template>
 <script>
 import "./index.scss";
+import userCard from "@/pages/userCard/other";
 import { mapGetters, mapActions } from "vuex";
 import Agora from "utils/Agora";
 import * as Util from "utils";
@@ -151,10 +153,12 @@ export default {
     queuePop,
     lineUpPop,
     giftRecordPop,
-    sendPop
+    sendPop,
+    userCard
   },
   data() {
     return {
+      showUserCard: false,
       flagSound: true,
       flagMicro: true,
       showRank: false,
@@ -203,6 +207,17 @@ export default {
     }
   },
   methods: {
+    listenWindowClose() {
+      window.onbeforeunload = function() {
+        this.exitRoom(true);
+        //窗口关闭前
+        return "确认要关闭当前窗口？";
+      };
+    },
+    showUserCardHandler(i) {
+      this.$store.dispatch("set-other-card-info", i);
+      this.showUserCard = true;
+    },
     cutstr: Util.cutstr,
     onRecharge() {
       if (this.userInfo && this.userInfo.user_id && !this.userInfo.is_visitor) {

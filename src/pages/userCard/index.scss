@@ -1,6 +1,14 @@
-.userCard{
-  position: relative;
-  .goback{
+.userCard {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  overflow: hidden;
+  z-index: 9999;
+
+  .goback {
     position: absolute;
     top: 15px;
     left: 15px;
@@ -11,33 +19,41 @@
     border-radius: 12px;
     color: #fff;
     line-height: 24px;
+    font-size: 14px;
   }
-  .van-swipe{
+
+  .van-swipe {
     height: 375px;
     margin-bottom: 20px;
-    img{
+
+    img {
       width: 100%;
       height: 100%;
     }
   }
-  .infoBox{
+
+  .infoBox {
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-align: left;
     padding: 0 20px 10px;
     border-bottom: 1px solid #F0F0F0;
-    h4{
+
+    h4 {
       font-size: 24px;
     }
-    p{
+
+    p {
       font-size: 14px;
       color: #646464;
-      span{
+
+      span {
         font-size: 12px;
-        margin-right: 10px;        
+        margin-right: 10px;
       }
-      .certify{
+
+      .certify {
         background-image: linear-gradient(to right, #F6A23D, #FFEB80);
         border-radius: 10px;
         color: #fff;
@@ -45,20 +61,23 @@
         margin-left: 5px;
       }
     }
-    .van-button{
+
+    .van-button {
       width: 70px;
       height: 26px;
       line-height: 26px;
       font-size: 14px;
     }
   }
-  .sign{
+
+  .sign {
     font-size: 13px;
     color: #646464;
     text-align: left;
     padding: 10px 20px;
   }
-  .opBox{
+
+  .opBox {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -67,7 +86,8 @@
     line-height: 50px;
     box-shadow: 0px -2px 9px 3px #EDEDED;
     font-size: 16px;
-    .gift{
+
+    .gift {
       width: 20px;
       height: 20px;
       border-radius: 10px;
@@ -77,7 +97,8 @@
       font-size: 13px;
       margin-right: 5px;
     }
-    .chat{
+
+    .chat {
       width: 20px;
       height: 20px;
       border-radius: 10px;
@@ -88,7 +109,8 @@
       margin-right: 5px;
     }
   }
-  .save{
+
+  .save {
     position: absolute;
     top: 15px;
     right: 20px;
@@ -99,12 +121,14 @@
     font-size: 14px;
     border: none;
   }
-  .change{
+
+  .change {
     position: absolute;
     top: 340px;
     right: 20px;
     z-index: 99;
-    .van-button{
+
+    .van-button {
       line-height: 26px;
       height: 26px;
       width: 80px;
@@ -113,7 +137,8 @@
       border-color: #fff;
     }
   }
-  .van-cell{
+
+  .van-cell {
     line-height: 30px;
     font-size: 16px;
   }

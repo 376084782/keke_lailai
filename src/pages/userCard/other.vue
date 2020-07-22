@@ -48,6 +48,9 @@ import * as Util from "utils";
 import "./index.scss";
 import { mapGetters } from "vuex";
 export default {
+  props: {
+    isComp: Boolean
+  },
   data() {
     return {
       is_mutual_follow: false
@@ -55,24 +58,23 @@ export default {
   },
   computed: {
     ...mapGetters({
-      oInfo: "USER_userCardInfo"
+      oInfo: "USER_userCardInfo",
+      userInfo: "BASE_userinfo",
     })
   },
   methods: {
     goApp() {
-      location.href = "https://ztaudio-res.qianyancm.com/share/index.html";
+      location.href =
+        "http://kk-res.kekestar.cn/channel_down/800000/index.html";
     },
     goGuanZhu() {
-      console.log(this.oInfo.user_id);
-      Util.doAjax({
-        url: Util.URLConfig(`/friends/follow`),
-        params: {
-          user_id: this.oInfo.user_id,
-          action: this.is_mutual_follow ? 0 : 1
-        }
-      }).then(msg => {
-        console.log(msg.data.is_mutual_follow);
-      });
+      if (this.userInfo && this.userInfo.user_id && !this.userInfo.is_visitor) {
+        // 已登录提示弹窗
+        location.href = this.$store.getters.urlDownload;
+      } else {
+        // 未登录打开登录弹窗
+        this.$store.dispatch("base/showLoginModal", true);
+      }
     },
     getAge(t) {
       let c = new Date().format("yyyy");
@@ -80,7 +82,11 @@ export default {
       return c - a;
     },
     goBack() {
-      this.$router.go(-1);
+      if (!this.isComp) {
+        this.$router.go(-1);
+      } else {
+        this.$emit("input", false);
+      }
     }
   }
 };

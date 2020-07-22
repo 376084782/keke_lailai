@@ -127,28 +127,19 @@ export default {
             RoomServerApi.tellServerMicroStatusChanged(
               -1,
               store.getters.ROOM_roomInfo.room_id
-            ).then(e => {
-              console.log('clearSeat')
-              Vue.prototype.$bus.$emit('room/IM', {
-                type: 'clearSeat',
-                data: result
-              })
-            })
+            )
           });
-        } else {
-          // 否则，普通用户下麦
-          Vue.prototype.$bus.$emit('room/IM', {
-            type: 'clearSeat',
-            data: result
-          })
         }
         break
 
       }
       case 30010: {
-        // 去掉普通麦用户显示，如果是自己，底部功能麦图标隐藏
+        // 判断如果是自己，则agora转换成观众角色。
+        Vue.prototype.$bus.$emit('room/IM', {
+          type: 'clearSeat',
+          data: result
+        })
         break
-
       }
       case 30011: {
         // 更新普通麦对应麦的UI，禁用该麦。

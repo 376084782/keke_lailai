@@ -3,7 +3,7 @@
     <keep-alive include="Main">
       <router-view />
     </keep-alive>
-    <l-login-pop v-model="bShowLogin"></l-login-pop>
+    <l-login-pop v-model="bShowLogin" style="z-index:10000;position: relative;"></l-login-pop>
     <lock-modal></lock-modal>
     <van-overlay :show="showOverlay">
       <div class="hint-wrap" @click.stop>

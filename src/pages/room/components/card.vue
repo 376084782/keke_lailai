@@ -47,12 +47,14 @@ export default {
     };
   },
   computed: {
-    showConfirmBtn(){
-      if(this.bSelf){
-        console.log(this.aQueue,'aQueueaQueueaQueue')
-        return !!this.aQueue.find(item=>item.user&&item.user.user_id==this.userId)
-      } else{
-        return true
+    showConfirmBtn() {
+      if (this.bSelf) {
+        console.log(this.aQueue, "aQueueaQueueaQueue");
+        return !!this.aQueue.find(
+          item => item.user && item.user.user_id == this.userId
+        );
+      } else {
+        return true;
       }
     },
     ...mapGetters({
@@ -120,13 +122,13 @@ export default {
           this.goOffMicro();
         } else {
           // 聊TA
-          location.href = "https://ztaudio-res.qianyancm.com/share/index.html";
+          location.href = this.$store.getters.urlDownload;
         }
         done(false);
       } else if (action == "cancel") {
         // 送礼
         self.$emit("send", this.userId);
-        console.log(this.userId)
+        console.log(this.userId);
         done();
       } else {
         done();
@@ -154,7 +156,11 @@ export default {
       height: 20%;
       position: absolute;
       bottom: 0;
-      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #000000 100%);
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        #000000 100%
+      );
     }
     img {
       position: absolute;

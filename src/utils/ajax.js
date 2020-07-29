@@ -65,7 +65,7 @@ function doAjax({
   let headers = {
     'Authorization': token,
     'X-Requested-With': 'XMLHttpRequest',
-    'H5-User-Agent': `h5ssliao;1.2.3;${sys};;${sys};20000;;${store.getters.userinfo?store.getters.userinfo.user_id:''}`
+    'H5-User-Agent': `h5lailai;2.1.1;${sys};;${sys};20000;;${store.getters.userinfo?store.getters.userinfo.user_id:''}`
   }
   console.log(headers)
   return new Promise((rsv, rej) => {

@@ -43,7 +43,7 @@
           v-for="(i, y) in giftList"
           :key="y"
           class="giftItem"
-          :class="{'active': i.gift_id == selectGood.gift_id}"
+          :class="{'active': i.goods_id == selectGood.goods_id}"
         >
           <img :src="i.image" @click="selectGood=i" />
           <p>{{ i.name }}</p>
@@ -183,14 +183,15 @@ export default {
         return;
       }
       Util.doAjax({
-        url: Util.URLConfig(`/gift/give_gift`),
+        url: Util.URLConfig(`/counter/buy`),
         type: "post",
         params: {
           room_id: this.$route.query.roomId,
-          type: 1,
-          to_user_ids: willSendUserList.join("#"),
-          gift_id: this.selectGood.gift_id,
-          gift_num: this.selectNum
+          is_anonym: 0,
+          to_user_id_arr: willSendUserList.join("#"),
+          goods_type: this.selectGood.goods_type,
+          goods_id: this.selectGood.goods_id,
+          goods_num: this.selectNum
         }
       }).then(msg => {
         this.show = false;
@@ -257,13 +258,10 @@ export default {
       };
       if (!this.giftListTotal || this.giftListTotal.length == 0) {
         Util.doAjax({
-          url: Util.URLConfig("/gift/gift_list"),
+          url: Util.URLConfig("/counter/list"),
           type: "get",
           params: {
-            platform: 1,
-            limit: 1000,
-            page_size: 1000,
-            page_index: this.page
+            id: 7
           },
           callback: function(msg) {
             self.typeList = msg.data.spec_list;

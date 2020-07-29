@@ -19,7 +19,7 @@ const state = {
   urlDownload:'http://kk-res.kekestar.cn/channel_down/800000/index.html',
   dev: false,
   showCharge: false,
-  env: 3,
+  env: 4,
   // 1声撩测试2声撩正式3来来测试4来来正式
   envConfig: {
     1: {

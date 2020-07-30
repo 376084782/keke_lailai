@@ -59,7 +59,7 @@ router.beforeEach(async (to, from, next) => {
   } else if (!navigator.userAgent.match(/AppleWebKit.*Mobile.*/)) {
     //跳转至pc端
     if (window.self === window.top) {
-      window.location.href = './html/pc.html';
+      window.location.href = store.getters.appConfig.htmlPc
     }
   }
   // 房间页面不能返回

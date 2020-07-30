@@ -16,30 +16,22 @@ const state = {
   bShowRoom: false,
 
   putUrl: '',
-  urlDownload:'http://kk-res.kekestar.cn/channel_down/800000/index.html',
   dev: false,
   showCharge: false,
   env: 4,
-  // 1声撩测试2声撩正式3来来测试4来来正式
+  //3来来测试4来来正式
   envConfig: {
-    1: {
-      secret: '879f6c6e1afb557bb7d77220a511099b',
-      tokenAgora: '3c25b42b3af24650ae8df9b1f3f69007',
-      tokenRongIm: 'bmdehs6pbg45s',
-      baseUrl: 'https://test-ztaudio-api.qianyancm.com'
-    },
-    2: {
-      secret: '2a2ec9746bd545947dd44173eea306c6',
-      tokenAgora: '7f7d4db4eb9242078ab8b72f06bb1363',
-      tokenRongIm: 'pkfcgjstpzba8',
-      baseUrl: 'https://ztaudio-api.qianyancm.com:8866'
-    },
     3: {
       secret: '879f6c6e1afb557bb7d77220a511099b',
       tokenAgora: 'eb1d8629e6a745669105eee55c6674f7',
       tokenRongIm: 'k51hidwqk4n7b',
       // baseUrl: 'http://39.105.149.236:5084',
       baseUrl: 'https://test-ll-api.kekestar.cn:50443',
+      version: '2.1.1',
+      appName: 'h5lailai',
+      chanel: '20000',
+      urlDownload: 'http://kk-res.kekestar.cn/channel_down/800000/index.html',
+      htmlPc: './html/pc.html'
     },
     // 来来正式
     4: {
@@ -48,6 +40,11 @@ const state = {
       tokenRongIm: 'tdrvipkstyqj5',
       // baseUrl: 'http://39.105.149.236:5084',
       baseUrl: 'https://ll-api.kekestar.cn',
+      version: '2.1.1',
+      appName: 'h5lailai',
+      chanel: '20000',
+      urlDownload: 'http://kk-res.kekestar.cn/channel_down/800000/index.html',
+      htmlPc: './html/pc.html'
     }
   }
 };

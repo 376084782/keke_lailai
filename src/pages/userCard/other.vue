@@ -59,13 +59,12 @@ export default {
   computed: {
     ...mapGetters({
       oInfo: "USER_userCardInfo",
-      userInfo: "BASE_userinfo",
+      userInfo: "BASE_userinfo"
     })
   },
   methods: {
     goApp() {
-      location.href =
-        "http://kk-res.kekestar.cn/channel_down/800000/index.html";
+      location.href = this.$store.getters.appConfig.urlDownload;
     },
     goGuanZhu() {
       if (this.userInfo && this.userInfo.user_id && !this.userInfo.is_visitor) {

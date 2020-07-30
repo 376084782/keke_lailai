@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     goDownload() {
-      location.href = "http://kk-res.kekestar.cn/channel_down/800000/index.html";
+      location.href = this.$store.getters.appConfig.urlDownload;
     },
     onRecharge() {
       console.log(

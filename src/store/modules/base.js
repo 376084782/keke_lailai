@@ -50,6 +50,9 @@ const state = {
 };
 
 const getters = {
+  appConfig: state => {
+    return state.envConfig[state.env]
+  },
   urlDownload: state => state.urlDownload,
   showCharge: state => state.showCharge,
   secret: state => {

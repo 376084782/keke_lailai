@@ -63,7 +63,7 @@ function doAjax({
     }
   }
   let headers = {
-    'Authorization': token,
+    'Requested-Token': token,
     'X-Requested-With': 'XMLHttpRequest',
 
     'H5-User-Agent': `${store.getters.appConfig.appName};${store.getters.appConfig.version};${sys};;${sys};${store.getters.appConfig.chanel};;${store.getters.userinfo?store.getters.userinfo.user_id:''}`,

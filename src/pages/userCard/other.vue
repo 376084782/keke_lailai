@@ -69,7 +69,7 @@ export default {
     goGuanZhu() {
       if (this.userInfo && this.userInfo.user_id && !this.userInfo.is_visitor) {
         // 已登录提示弹窗
-        location.href = this.$store.getters.urlDownload;
+        location.href = this.$store.getters.appConfig.urlDownload;
       } else {
         // 未登录打开登录弹窗
         this.$store.dispatch("base/showLoginModal", true);

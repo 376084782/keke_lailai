@@ -122,7 +122,7 @@ export default {
           this.goOffMicro();
         } else {
           // 聊TA
-          location.href = this.$store.getters.urlDownload;
+          location.href = this.$store.getters.appConfig.urlDownload;
         }
         done(false);
       } else if (action == "cancel") {

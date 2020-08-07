@@ -117,6 +117,7 @@
     <l-recharge-modal v-model="bShowRechargeModal"></l-recharge-modal>
     <view-rank @showUserCard="showUserCardHandler" @close="showRank=false" v-if="showRank"></view-rank>
     <user-card :is-comp="true" v-show="showUserCard" v-model="showUserCard"></user-card>
+    <download-ball v-if="$store.getters.appConfig.showDownloadBall"></download-ball>
   </div>
 </template>
 <script>
@@ -140,6 +141,7 @@ import lineUpPop from "./components/lineUp.vue";
 import giftRecordPop from "./components/giftRecord.vue";
 import sendPop from "./components/send.vue";
 import avatar from "@/components/avatar.vue";
+import downloadBall from "@/components/downloadBall.vue";
 export default {
   components: {
     avatar,
@@ -154,7 +156,8 @@ export default {
     lineUpPop,
     giftRecordPop,
     sendPop,
-    userCard
+    userCard,
+    downloadBall
   },
   data() {
     return {

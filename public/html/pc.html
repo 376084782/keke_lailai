@@ -110,7 +110,6 @@
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
       background-color: #555;
     }
-
   </style>
 </head>
 
@@ -120,10 +119,31 @@
     <img class="txt" src="./assets/txt.png" alt="">
     <iframe class="phone" src="../index.html" frameborder="0"></iframe>
     <img class="icon" src="./assets/icon.png" alt="">
-    <img class="btn andriod" src="./assets/andriod.png" alt="" onclick="location.href='https://ll-api.kekestar.cn/system/version/get?channel_id=800000'">
-    <img class="btn iphone" src="./assets/iphone.png" alt="" onclick="location.href='https://itunes.apple.com/cn/app/id1449458036?mt=8'">
+    <img class="btn andriod" id="btnAndriod" src="./assets/andriod.png" alt="">
+    <img class="btn iphone" id="btnIos" src="./assets/iphone.png" alt="">
     <img class="code" src="./assets/code.png" alt="">
   </div>
+  <script>
+    window.addEventListener("message", receiveMessage, false);
+
+    function receiveMessage(e) {
+      // For Chrome, the origin property is in the event.originalEvent
+      // object. 
+      // 这里不准确，chrome没有这个属性
+      // var origin = event.origin || event.originalEvent.origin; 
+      if (e.data && e.data.type == 'changePCDownloadUrl') {
+        var data = e.data
+        var btnA = document.querySelector('#btnAndriod');
+        btnA.onclick = () => {
+          location.href = data.andriod
+        }
+        var btnIos = document.querySelector('#btnIos');
+        btnIos.onclick = () => {
+          location.href = data.ios
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>

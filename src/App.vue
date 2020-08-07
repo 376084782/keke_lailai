@@ -94,6 +94,19 @@ export default {
     localStorage.setItem("overlayShowed", "1");
     window["$toast"] = this.$toast;
     this.checkBackToGame();
+  },
+  created() {
+    let urlA = this.$store.getters.appConfig.downloadUrlAndriod;
+    let urlIos = this.$store.getters.appConfig.downloadUrlIos;
+    top &&
+      top.postMessage(
+        {
+          type: "changePCDownloadUrl",
+          ios: urlIos,
+          andriod: urlA
+        },
+        "*"
+      );
   }
 };
 </script>

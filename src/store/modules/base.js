@@ -22,6 +22,9 @@ const state = {
   //3来来测试4来来正式
   envConfig: {
     3: {
+      showDownloadBall: true,
+      downloadUrlAndriod: 'https://ll-api.kekestar.cn/system/version/get?channel_id=800000',
+      downloadUrlIos: 'https://itunes.apple.com/cn/app/id1449458036?mt=8',
       secret: '879f6c6e1afb557bb7d77220a511099b',
       tokenAgora: 'eb1d8629e6a745669105eee55c6674f7',
       tokenRongIm: 'k51hidwqk4n7b',
@@ -35,6 +38,9 @@ const state = {
     },
     // 来来正式
     4: {
+      showDownloadBall: true,
+      downloadUrlAndriod: 'https://ll-api.kekestar.cn/system/version/get?channel_id=800000',
+      downloadUrlIos: 'https://itunes.apple.com/cn/app/id1449458036?mt=8',
       secret: 'fe154278d336d08e672745797644c364',
       tokenAgora: 'b14a0dfe76dc44fc9d170b700659d8cd',
       tokenRongIm: 'tdrvipkstyqj5',
@@ -50,6 +56,29 @@ const state = {
 };
 
 const getters = {
+  client: state => {
+    let u = navigator.userAgent,
+      app = navigator.appVersion;
+    let sys = '';
+    let isMobile = !!u.match(/AppleWebKit.*Mobile/i) ||
+      !!u.match(
+        /MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/
+      );
+    if (isMobile) {
+      if (u.indexOf("iPhone") > -1) {
+        sys = "iphone";
+      } else {
+        sys = "Android";
+      }
+    } else {
+      if (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
+        sys = "Mac";
+      } else {
+        sys = "Windows";
+      }
+    }
+    return sys;
+  },
   appConfig: state => {
     return state.envConfig[state.env]
   },

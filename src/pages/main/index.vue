@@ -39,6 +39,7 @@
         </div>
       </div>
     </van-pull-refresh>
+    <download-ball v-if="$store.getters.appConfig.showDownloadBall"></download-ball>
   </div>
 </template>
 <script>
@@ -46,12 +47,14 @@ import * as Util from "utils";
 import "styles/home.scss";
 import { mapActions, mapGetters } from "vuex";
 import avatar from "@/components/avatar.vue";
+import downloadBall from "@/components/downloadBall.vue";
 
 import RongIM from "../../utils/RongIM";
 export default {
   name: "Main",
   components: {
-    avatar
+    avatar,
+    downloadBall
   },
   data() {
     return {

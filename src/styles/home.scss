@@ -1,5 +1,15 @@
 @import "theme";
 
+.download-ball {
+  width: 72px;
+  height: 72px;
+  background: url(~@/assets/icon/download.png) no-repeat;
+  background-size: contain;
+  position: fixed;
+  bottom: 53.5px;
+  right: 11.5px;
+}
+
 .home {
   // padding-top: 60px;
   display: flex;

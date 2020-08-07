@@ -41,6 +41,7 @@ Vue.component("lRechargeModal", rechargeModal)
 
 Vue.config.productionTip = false
 
+
 /* eslint-disable no-new */
 new Vue({
   router,

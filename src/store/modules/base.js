@@ -23,7 +23,7 @@ const state = {
   envConfig: {
     3: {
       showDownloadBall: true,
-      downloadUrlAndriod: 'https://ll-api.kekestar.cn/system/version/get?channel_id=800000',
+      downloadUrlAndriod: 'https://ll-api.kekestar.cn/system/version/get?channel_id=800072',
       downloadUrlIos: 'https://itunes.apple.com/cn/app/id1449458036?mt=8',
       secret: '879f6c6e1afb557bb7d77220a511099b',
       tokenAgora: 'eb1d8629e6a745669105eee55c6674f7',
@@ -32,8 +32,8 @@ const state = {
       baseUrl: 'https://test-ll-api.kekestar.cn:50443',
       version: '2.1.1',
       appName: 'h5lailai',
-      chanel: '20000',
-      urlDownload: 'http://kk-res.kekestar.cn/channel_down/800000/index.html',
+      chanel: '200072',
+      urlDownload: 'https://kk-res.kekestar.cn/channel_down/800072/index.html',
       htmlPc: './html/pc.html'
     },
     // 来来正式
@@ -48,8 +48,8 @@ const state = {
       baseUrl: 'https://ll-api.kekestar.cn',
       version: '2.1.1',
       appName: 'h5lailai',
-      chanel: '20000',
-      urlDownload: 'http://kk-res.kekestar.cn/channel_down/800000/index.html',
+      chanel: '200072',
+      urlDownload: 'https://kk-res.kekestar.cn/channel_down/800072/index.html',
       htmlPc: './html/pc.html'
     }
   }

@@ -64,11 +64,17 @@ export default {
   },
   methods: {
     goApp() {
+      var _czc = window._czc || [];
+      _czc.push(["_setAccount", "1279075837"]);
+      _czc.push(['_trackEvent', '聊TA点击下载', '点击', '1','1','1']);
       location.href = this.$store.getters.appConfig.urlDownload;
     },
     goGuanZhu() {
       if (this.userInfo && this.userInfo.user_id && !this.userInfo.is_visitor) {
         // 已登录提示弹窗
+        var _czc = window._czc || [];
+      _czc.push(["_setAccount", "1279075837"]);
+      _czc.push(['_trackEvent', '聊TA点击下载', '点击', '1','1','1']);
         location.href = this.$store.getters.appConfig.urlDownload;
       } else {
         // 未登录打开登录弹窗

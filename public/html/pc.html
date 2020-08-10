@@ -135,10 +135,16 @@
         var data = e.data
         var btnA = document.querySelector('#btnAndriod');
         btnA.onclick = () => {
+          var _czc = window._czc || [];
+          _czc.push(["_setAccount", "1279075837"]);
+          _czc.push(['_trackEvent', 'PC安卓点击下载', '点击', '1','1','1']);
           location.href = data.andriod
         }
         var btnIos = document.querySelector('#btnIos');
         btnIos.onclick = () => {
+          var _czc = window._czc || [];
+          _czc.push(["_setAccount", "1279075837"]);
+          _czc.push(['_trackEvent', 'PCiOS点击下载', '点击', '1','1','1']);
           location.href = data.ios
         }
       }

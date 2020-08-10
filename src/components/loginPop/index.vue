@@ -79,6 +79,9 @@ export default {
   },
   methods: {
     goDownload() {
+      var _czc = window._czc || [];
+      _czc.push(["_setAccount", "1279075837"]);
+      _czc.push(['_trackEvent', '首页点击下载', '点击', '1','1','1']);
       location.href = this.$store.getters.appConfig.urlDownload;
     },
     onRecharge() {
